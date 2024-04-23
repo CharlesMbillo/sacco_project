@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transaction Summary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        details {
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Transaction Summary</h1>
+    <details>
+        <summary>Click to view transactions</summary>
+        <table>
+            <tr>
+                <th>Member ID</th>
+                <th>Transaction Type</th>
+                <th>Face Amount</th>
+                <th>Transaction Date</th>
+            </tr>
+            <!-- Example Row (this should be dynamically generated with server-side data) -->
+            <tr>
+                <td>12345</td>
+                <td>Deposit</td>
+                <td>$500.00</td>
+                <td>2024-04-23</td>
+            </tr>
+            <!-- Additional rows would be added here -->
+        </table>
+    </details>
+</body>
+</html>

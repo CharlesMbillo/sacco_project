@@ -71,3 +71,9 @@ def transaction_pdf(request):
     p.save()
     return response
 
+# views.py
+from django.shortcuts import render
+
+def summary_view(request):
+    # Your view logic here
+    return render(request, 'summary_template.html')
