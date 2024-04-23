@@ -6,6 +6,7 @@
 </head>
 <body>
     <form id="transactionForm">
+        {% csrf_token %}
         Member ID: <input type="text" name="member_id"><br>
         Transaction Type: <select name="transaction_type">
             <option value="deposit">Deposit</option>
