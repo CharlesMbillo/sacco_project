@@ -1,29 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Transaction Form</title>
 </head>
 <body>
-<h1>Transactions</h1>
-    <form id="Transaction">
+    <p>
+    <hr/>
+    <section 1>
+<h1>Transaction</h1>
+    <form method="post">
         {% csrf_token %}
-        Member ID: <input autocomplete = "off" autofocus type="text" name="member_id"><br><br>
-        Transaction Type: <select name="transaction_type"><br><br>
-            <option value="deposit">Deposit</option>
-            <option value="savings">Savings</option>
-            <option value="withdrawal">Withdrawal</option>
-        </select><br><br>
-        Face Amount: <input autocomplete="off" autofocus type="number" name="face_amount" step="0.01"><br><br>
-        <button type="submit">Submit</button>
-        {% if errors %}
-        <ul class="error">
-            {% for error in errors %}
-                <li>{{ error }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
+        {{ form.as_p}}
+        <input autocomplete="off" autofocus type="submit" value="Submit"; style="background-color:whitesmoke">    
     </form>
+    <br/>
+        <aside>(...A Django WebApp that captures user transactions...)</aside>
+   </section 1>
     <hr/>
     <h5 style="background-color: whitesmoke;"> Github:https://github.com/CharlesMbillo/sacco_project.git @ Copyright 2023</h5>
     <hr/>

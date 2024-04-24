@@ -9,14 +9,14 @@ def index(request):
         form = TransactionForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('summary')
+            return redirect('/success')
     else:
         form = TransactionForm()
     return render(request, 'index.html', {'form': form})
 
 def transaction_summary(request):
     transactions = Transaction.objects.all()
-    return render(request, 'summary.html', {'transactions': transactions})
+    return render(request, 'summary_template.html', {'transactions': transactions})
 
 # This view will display transactions in a web page using an HTML table#
 
