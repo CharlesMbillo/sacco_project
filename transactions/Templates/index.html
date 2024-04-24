@@ -8,15 +8,25 @@
 <h1>Transactions</h1>
     <form id="Transaction">
         {% csrf_token %}
-        Member ID: <input type="text" name="member_id"><br>
-        Transaction Type: <select name="transaction_type">
+        Member ID: <input autocomplete = "off" autofocus type="text" name="member_id"><br><br>
+        Transaction Type: <select name="transaction_type"><br><br>
             <option value="deposit">Deposit</option>
             <option value="savings">Savings</option>
             <option value="withdrawal">Withdrawal</option>
-        </select><br>
-        Face Amount: <input type="number" name="face_amount" step="0.01"><br>
+        </select><br><br>
+        Face Amount: <input autocomplete="off" autofocus type="number" name="face_amount" step="0.01"><br><br>
         <button type="submit">Submit</button>
+        {% if errors %}
+        <ul class="error">
+            {% for error in errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
     </form>
+    <hr/>
+    <h5 style="background-color: whitesmoke;"> Github:https://github.com/CharlesMbillo/sacco_project.git @ Copyright 2023</h5>
+    <hr/>
 
     <script>
         document.getElementById('transactionForm').addEventListener('submit', function(event) {

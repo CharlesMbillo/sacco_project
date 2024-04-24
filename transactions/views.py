@@ -77,3 +77,6 @@ from django.shortcuts import render
 def summary_view(request):
     # Your view logic here
     return render(request, 'summary_template.html')
+
+def success(request):
+    return render(request, 'success.html')
