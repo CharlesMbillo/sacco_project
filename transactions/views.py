@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 from .forms import TransactionForm
 from .models import Transaction
 
-def index(request):
+def transaction(request):
     if request.method == 'POST':
         form = TransactionForm(request.POST)
         if form.is_valid():
@@ -12,11 +12,11 @@ def index(request):
             return redirect('/success')
     else:
         form = TransactionForm()
-    return render(request, 'index.html', {'form': form})
+    return render(request, 'transaction.html', {'form': form})
 
 def transaction_summary(request):
     transactions = Transaction.objects.all()
-    return render(request, 'summary_template.html', {'transactions': transactions})
+    return render(request, 'summary_template.html', {'transactions_html.html': transactions})
 
 # This view will display transactions in a web page using an HTML table#
 
